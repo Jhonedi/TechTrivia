@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Trivia</title>
+    <meta name="description" content="Una trivia interactiva sobre tecnología e informática.">
+    <link rel="stylesheet" href="styles.css">
+    <!--Para obtener el estilo de la letra-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Pantalla de Inicio -->
+        <section id="start-screen" class="screen active">
+            <div class="logo-container">
+                <h1>TechTrivia</h1>
+            </div>
+            <div class="form-container">
+                <input type="text" id="player-name" placeholder="Ingresa tu nombre..." autocomplete="off">
+                <button id="start-btn" class="btn primary-btn">Comenzar</button>
+                <button id="view-ranking-btn-start" class="btn secondary-btn">Ver Ranking</button>
+            </div>
+        </section>
+
+        <!-- Pantalla de Pregunta -->
+        <section id="question-screen" class="screen">
+            <div class="header">
+                <span id="question-counter">Pregunta 1/20</span>
+                <span id="score-display">Puntos: 0</span>
+            </div>
+            <div class="timer-container">
+                <div id="timer-bar"></div>
+                <span id="timer-text">20</span>
+            </div>
+            <div class="question-container">
+                <h2 id="question-text">¿Pregunta?</h2>
+            </div>
+            <div class="options-container" id="options-container">
+                <!-- Botones generados dinámicamente -->
+            </div>
+            <div id="feedback-message" class="hidden"></div>
+        </section>
+
+        <!-- Pantalla de Resultados Finales -->
+        <section id="end-screen" class="screen">
+            <h2>¡Juego Terminado!</h2>
+            <div class="stats-container">
+                <p>Jugador: <span id="final-player-name"></span></p>
+                <div class="score-circle">
+                    <span id="final-score">0</span>
+                    <small>puntos</small>
+                </div>
+                <div class="stats-details">
+                    <p>✅ Correctas: <span id="correct-count">0</span></p>
+                    <p>❌ Incorrectas/Vacías: <span id="incorrect-count">0</span></p>
+                    <p>⏱️ Tiempo Promedio: <span id="avg-time">0</span>s</p>
+                </div>
+            </div>
+            <div class="actions">
+                <button id="view-ranking-btn-end" class="btn primary-btn">Ver Ranking</button>
+                <button id="play-again-btn" class="btn secondary-btn">Jugar de Nuevo</button>
+            </div>
+        </section>
+
+        <!-- Pantalla de Ranking -->
+        <section id="ranking-screen" class="screen">
+            <h2>Top Jugadores</h2>
+            <div class="table-container">
+                <table id="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Nombre</th>
+                            <th>Puntos</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-body">
+                        <!-- Filas generadas dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="actions">
+                <button id="back-home-btn" class="btn primary-btn">Volver al Inicio</button>
+                <button id="clear-ranking-btn" class="btn danger-btn">Limpiar Ranking</button>
+            </div>
+        </section>
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>
